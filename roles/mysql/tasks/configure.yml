@@ -1,0 +1,12 @@
+- name: Install mysql
+  become: yes
+  apk: name={{item}} state=latest
+  with_items:
+    - mysql
+    - mysql-client
+
+- name: ensure mysql is running 
+  service:
+      name: mariadb
+      state: started
+  

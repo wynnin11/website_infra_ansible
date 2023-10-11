@@ -1,0 +1,9 @@
+
+# - name: Remove Default
+#   file: path="/etc/nginx/http.d/default.conf" state=absent  
+
+- name: Deploy nginx configuration
+  template:
+    src=mysite.j2 dest="/etc/nginx/http.d/default.conf"
+  notify: restart nginx
+

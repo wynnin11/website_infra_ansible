@@ -1,0 +1,10 @@
+- name: "Update"
+  apk:
+    update_cache: yes
+- name: "Install new packages"
+  apk: name={{ item }} state=latest
+  with_items:
+    - py3-pypdf2
+    - tree
+    - open-vm-tools
+    - py3-pip

@@ -1,0 +1,4 @@
+---
+# tasks file for roles/common
+- include_tasks: install_tools.yml
+- include_tasks: configure_system.yml

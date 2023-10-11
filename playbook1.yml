@@ -1,0 +1,18 @@
+- hosts: webservers 
+  become: yes
+  roles:
+    - apache2
+    - common 
+  
+- hosts: proxy 
+  become: yes
+  roles:
+    - common
+    - nginx
+
+- hosts: database
+  become: yes 
+  roles:
+    - common
+    - mysql
+  tags: database
